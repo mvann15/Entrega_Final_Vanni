@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url("..img/5.jpg");
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #mensaje {
+
+            color: white;
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        form {
+
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+    {% if request.GET.mensaje %}
+    <div id="mensaje">
+        <h1>{{ request.GET.mensaje }}</h1>
+    </div>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Iniciar sesión">
+    </form>
+</body>
+</html>
+
