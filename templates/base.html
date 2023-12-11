@@ -63,30 +63,34 @@
 
 
         <!-- Icons Grid-->
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
 
-        <section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
-                    {% include 'AppClub/profesor.html' %}
-
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class=><i class=></i></div>
-                            <h3></h3>
-                            <p class="lead mb-0"></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>MATERIAS</h3>
-                            <p class="lead mb-0">Puedes consultar las materias desde aquí.</p>
-
-                        </div>
-                    </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/profesor.jpg' %}" alt="Imagen de Profesores" style="width: 150px; height: 150px;" />
+                    <h3>PROFESORES</h3>
+                    <p class="lead mb-0">Docentes con años de trayectoria te acompañarán cada clase. </p>
+                    <a href="{% url 'Profesores' %}" class="btn btn-primary">Detalles</a>
                 </div>
+                {% include 'AppClub/profesor.html' %}
             </div>
-        </section>
+
+            <div class="col-lg-4 offset-lg-4">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/materia.jpg' %}" alt="Imagen de Materias" style="width: 150px; height: 150px;" />
+                    <h3>MATERIAS</h3>
+                    <p class="lead mb-0">Puedes consultar las materias desde aquí.</p>
+                    <a href="{% url 'Materia' %}" class="btn btn-primary">Detalles</a>
+                </div>
+                {% include 'AppClub/materia.html' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
         {% block cambio %}
         <!-- Image Showcases-->
         <section class="showcase">
@@ -163,14 +167,14 @@
                         <!-- to get an API token!-->
                         <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
                             <!-- Email address input-->
-                            <div class="row">
-                                <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Dirección de correo" data-sb-validations="required,email" />
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
-                                </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div>
-                            </div>
+<!--                            <div class="row">-->
+<!--                                <div class="col">-->
+<!--                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Dirección de correo" data-sb-validations="required,email" />-->
+<!--                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>-->
+<!--                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>-->
+<!--                                </div>-->
+<!--                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div>-->
+<!--                            </div>-->
                             <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
