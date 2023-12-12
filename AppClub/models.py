@@ -34,4 +34,4 @@ class Noticia(models.Model):
     fecha_creacion = models.DateTimeField(default=datetime.datetime.now())
 
     def __str__(self):
-        return f" {self.titulo} "
+        return f" {self.titulo} - {self.descripcion} - {self.fecha_creacion}"
