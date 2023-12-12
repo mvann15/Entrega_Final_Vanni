@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from AppClub.models import Profesor, Materia, Noticia
+
+from AppClub.form import ComentarioForm
+from AppClub.models import Profesor, Materia, Noticia, Comentario
 
 
 def show_html(request):
@@ -39,3 +41,23 @@ class NoticiaList(ListView):
         context = super().get_context_data(**kwargs)
         context['noticias'] = Noticia.objects.all()
         return context
+
+
+def comentario(request):
+    # formulario = ComentarioForm(request.POST)
+    #
+    # if formulario.is_valid():
+    #     informacion = formulario.cleaned_data
+
+    noticia = Noticia.objects.get(id=request.POST["noticia"])
+    comentario_crear = Comentario(usuario=request.user, noticia=noticia, comentario=request.POST["comentario"])
+
+    comentario_crear.save()
+
+    return redirect("/app/noticias")
+    #
+    # form = ComentarioForm()
+    # contexto = {
+    #     "form": form
+    # }
+    # return render(request, "comentario.html", contexto)

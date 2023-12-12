@@ -1,0 +1,51 @@
+<style>
+    .comentarios-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        list-style: none;
+        padding: 0;
+    }
+
+    .comentario-item {
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+
+    .comentario-imagen {
+        width: 100%;
+        height: auto;
+    }
+
+    .comentario-info {
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    h4, p {
+        margin: 0;
+    }
+</style>
+
+<!--{% for comentario in noticias.comentario %}-->
+
+
+<ul>
+{% if user.is_authenticated %}
+<form action="/app/comentarios/" method="post">
+    dejanos un comentario:
+    {% csrf_token %}
+
+<!--    {{ form.as_p }}-->
+
+    <input type="text" name="comentario">
+    <input type="hidden" name="noticia" value="{{ noticia.id }}">
+    <input type="submit" value="enviar">
+</form>
+{% endif %}
+</ul>

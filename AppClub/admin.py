@@ -1,10 +1,11 @@
-from AppClub.models import Profesor, Materia, Noticia
+from AppClub.models import Profesor, Materia, Noticia, Comentario
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 admin.site.register(Profesor)
 admin.site.register(Materia)
 admin.site.register(Noticia)
+admin.site.register(Comentario)
 
 
 class ProfesorAdmin(admin.ModelAdmin):
