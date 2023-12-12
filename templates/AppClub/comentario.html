@@ -32,20 +32,27 @@
     }
 </style>
 
-<!--{% for comentario in noticias.comentario %}-->
-
+{#{% for comentario in noticias.comentario %}#}
+<h3>Comentarios:</h3>
+<ul>
+    {% for comentario in noticia.comentarios.all %}
+        <li>
+            <strong>{{ comentario.usuario.username }}</strong>: {{ comentario.comentario }}
+        </li>
+    {% endfor %}
+</ul>
 
 <ul>
-{% if user.is_authenticated %}
-<form action="/app/comentarios/" method="post">
-    dejanos un comentario:
-    {% csrf_token %}
+    {% if user.is_authenticated %}
+        <form action="/app/comentarios/" method="post">
+            dejanos un comentario:
+            {% csrf_token %}
 
-<!--    {{ form.as_p }}-->
+            <!--    {{ form.as_p }}-->
 
-    <input type="text" name="comentario">
-    <input type="hidden" name="noticia" value="{{ noticia.id }}">
-    <input type="submit" value="enviar">
-</form>
-{% endif %}
+            <input type="text" name="comentario">
+            <input type="hidden" name="noticia" value="{{ noticia.id }}">
+            <input type="submit" value="enviar">
+        </form>
+    {% endif %}
 </ul>

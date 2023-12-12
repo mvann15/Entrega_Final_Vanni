@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
-from AppClub.form import ComentarioForm
 from AppClub.models import Profesor, Materia, Noticia, Comentario
 
 

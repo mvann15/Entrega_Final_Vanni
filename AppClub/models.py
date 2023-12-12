@@ -1,6 +1,7 @@
-from django.db import models
 import datetime
+
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class Club(models.Model):
@@ -29,7 +30,7 @@ class Materia(models.Model):
 
 
 class Comentario(models.Model):
-    noticia = models.ForeignKey("Noticia", on_delete=models.CASCADE)
+    noticia = models.ForeignKey("Noticia", on_delete=models.CASCADE, related_name='comentarios')
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     comentario = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(default=datetime.datetime.now())
@@ -40,7 +41,6 @@ class Noticia(models.Model):
     descripcion = models.CharField(max_length=400)
     imagen = models.ImageField(upload_to="noticia_images/", null=True, blank=True)
     fecha_creacion = models.DateTimeField(default=datetime.datetime.now())
-    comentarios = models.ManyToOneRel("comentarios", Comentario, Comentario.id)
 
     def __str__(self):
         return f" {self.titulo} - {self.descripcion} - {self.fecha_creacion}"
