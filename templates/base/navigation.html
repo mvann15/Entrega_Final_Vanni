@@ -4,8 +4,7 @@
                 <a href="{% url 'Registro' %}" class="btn btn-link">Registro</a>
                 {% if user.is_authenticated %}
 <!--                <h5>{{ user.get_username }}</h5>-->
-                <a class="btn btn-link">Hola {{ user.get_username }}</a>
-                <img style="height: 60px" src="{{ user.avatar.imagen.url }}" alt="">
+                <a class="disabled btn btn-dark">Hola {{ user.get_username }} <img style="height: 60px"  src="{{ user.avatar.imagen.url }}" alt=""></a>
                 <a class="btn btn-link" href="{% url 'Logout' %}">Logout</a>
                 {% else %}
                 {% endif %}

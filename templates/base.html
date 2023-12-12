@@ -89,39 +89,21 @@
         </div>
     </div>
 </section>
-
-
-        {% block cambio %}
         <!-- Image Showcases-->
         <section class="showcase">
             <div class="container-fluid p-0">
                 <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'assets/img/6.jpg' %})"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Fundamentos básicos de futbol</h2>
-                        <p class="lead mb-0">dejo vacío?.</p>
-                    </div>
-                </div>
-                <div class="row g-0">
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url({% static 'assets/img/14.jpg' %})"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Preparación técnica y táctica</h2>
-                        <p class="lead mb-0">dejo vacío tambien??.</p>
-                    </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'assets/img/11.jpg' %})"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Talleres por edades.</h2>
-                        <p class="lead mb-0"> Encuentros y mucha diversión.</p>
+                        <h2>Entérate de nuestras  actividades</h2>
+                        <p class="lead mb-0">Sigue nuestra agenda. Déjanos tus comentarios!</p>
+                        <a href="{% url 'Noticia' %}" class="btn btn-primary">Leer mas</a>
+                        {% include 'AppClub/noticia.html' %}
+
                     </div>
                 </div>
             </div>
         </section>
-
-        {% endblock %}
-
-
         <!-- Testimonials-->
         <section class="testimonials text-center bg-light">
             <div class="container">

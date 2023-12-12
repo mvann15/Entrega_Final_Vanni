@@ -1,5 +1,5 @@
 <style>
-    .profesores-list {
+    .noticias-list {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -9,7 +9,7 @@
         padding: 0;
     }
 
-    .profesor-item {
+    .noticia-item {
         margin: 10px;
         border: 1px solid #ccc;
         border-radius: 8px;
@@ -17,12 +17,12 @@
     }
 
 
-    .profesor-imagen {
-        width: 100%;
+    .noticia-imagen {
+        width: 50%;
         height: auto;
     }
 
-    .profesor-info {
+    .noticia-info {
         padding: 10px;
         background-color: #f9f9f9;
     }
@@ -32,16 +32,16 @@
     }
 </style>
 
-<ul class="profesores-list">
-    {% for profesor in profesores %}
-        <li class="profesor-item">
-            <div class="profesor-details">
-                {% if profesor.imagen %}
-                    <img src="{{ profesor.imagen.url }}" alt="{{ profesor.nombre }}" class="profesor-imagen">
+<ul class="noticias-list">
+    {% for noticia in noticias %}
+        <li class="noticia-item">
+            <div class="noticia-details">
+                {% if noticia.imagen %}
+                    <img src="{{ noticia.imagen.url }}" alt="{{ noticia.nombre }}" class="noticia-imagen">
                 {% endif %}
-                <div class="profesor-info">
-                    <h4>{{ profesor.nombre }}</h4>
-                    <p>{{ profesor.materia }}</p>
+                <div class="noticia-info">
+                    <h4>{{ noticia.titulo }}</h4>
+                    <p>{{ noticia.descripcion }}</p>
                 </div>
             </div>
         </li>
