@@ -19,9 +19,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from AppClub.views import show_html
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', show_html),
     path('app/', include('AppClub.urls')),
     path('accounts/', include('accounts.urls')),
 ]

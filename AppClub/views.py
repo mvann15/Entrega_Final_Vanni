@@ -61,3 +61,6 @@ def mi_perfil(request):
         'perfil': perfil
     }
     return render(request, 'AppClub/perfil.html', contexto)
+
+
+
