@@ -72,7 +72,7 @@
                     <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/profesor.jpg' %}" alt="Imagen de Profesores" style="width: 150px; height: 150px;" />
                     <h3>PROFESORES</h3>
                     <p class="lead mb-0">Docentes con años de trayectoria te acompañarán cada clase. </p>
-                    <a href="{% url 'Profesores' %}" class="btn btn-primary">Detalles</a>
+                    <a href="{% url 'Profesores' %}" class="btn btn-link">Detalles</a>
                 </div>
                 {% include 'AppClub/profesor.html' %}
             </div>
@@ -82,7 +82,7 @@
                     <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/materia.jpg' %}" alt="Imagen de Materias" style="width: 150px; height: 150px;" />
                     <h3>MATERIAS</h3>
                     <p class="lead mb-0">Puedes consultar las materias desde aquí.</p>
-                    <a href="{% url 'Materia' %}" class="btn btn-primary">Detalles</a>
+                    <a href="{% url 'Materia' %}" class="btn btn-link">Detalles</a>
                 </div>
                 {% include 'AppClub/materia.html' %}
             </div>
@@ -97,7 +97,7 @@
                     <div class="col-lg-6 my-auto showcase-text">
                         <h2>Entérate de nuestras  actividades</h2>
                         <p class="lead mb-0">Sigue nuestra agenda. Déjanos tus comentarios!</p>
-                        <a href="{% url 'Noticia' %}" class="btn btn-primary">Leer mas</a>
+                        <a href="{% url 'Noticia' %}" class="btn btn-link">Leer mas</a>
                         {% include 'AppClub/noticia.html' %}
 
                     </div>
@@ -178,11 +178,32 @@
                 </div>
             </div>
         </section>
-
-
-
         <!-- Footer-->
-        {% include 'base/footer.html' %}
+        <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#!" id="about-link">About</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('about-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = '/app/perfil/';
+        });
+    </script>
+</body>
+</html>
+
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

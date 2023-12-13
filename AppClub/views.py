@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
-from AppClub.models import Profesor, Materia, Noticia, Comentario
+from AppClub.models import Profesor, Materia, Noticia, Comentario, Perfil
 
 
 def show_html(request):
@@ -16,7 +16,9 @@ class ProfesorList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['profesores'] = Profesor.objects.all()
+        profesores = Profesor.objects.all()
+        context['profesores'] = profesores
+        context['base_de_datos_vacia'] = not profesores.exists()
         return context
 
 
@@ -27,7 +29,9 @@ class MateriaList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['materias'] = Materia.objects.all()
+        materias = Materia.objects.all()
+        context['materias'] = materias
+        context['base_de_datos_vacia'] = not materias.exists()
         return context
 
 
@@ -43,20 +47,17 @@ class NoticiaList(ListView):
 
 
 def comentario(request):
-    # formulario = ComentarioForm(request.POST)
-    #
-    # if formulario.is_valid():
-    #     informacion = formulario.cleaned_data
-
     noticia = Noticia.objects.get(id=request.POST["noticia"])
     comentario_crear = Comentario(usuario=request.user, noticia=noticia, comentario=request.POST["comentario"])
 
     comentario_crear.save()
 
     return redirect("/app/noticias")
-    #
-    # form = ComentarioForm()
-    # contexto = {
-    #     "form": form
-    # }
-    # return render(request, "comentario.html", contexto)
+
+
+def mi_perfil(request):
+    perfil = Perfil.objects.first()
+    contexto = {
+        'perfil': perfil
+    }
+    return render(request, 'AppClub/perfil.html', contexto)

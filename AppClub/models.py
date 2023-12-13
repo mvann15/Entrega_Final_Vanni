@@ -44,3 +44,7 @@ class Noticia(models.Model):
 
     def __str__(self):
         return f" {self.titulo} - {self.descripcion} - {self.fecha_creacion}"
+
+
+class Perfil(models.Model):
+    contenido = models.TextField(800)

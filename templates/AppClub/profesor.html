@@ -32,18 +32,30 @@
     }
 </style>
 
-<ul class="profesores-list">
-    {% for profesor in profesores %}
-        <li class="profesor-item">
-            <div class="profesor-details">
-                {% if profesor.imagen %}
-                    <img src="{{ profesor.imagen.url }}" alt="{{ profesor.nombre }}" class="profesor-imagen">
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {% if base_de_datos_vacia %}
+                    <p>No hay profesores disponibles en la base de datos.</p>
+                {% else %}
+                    <ul class="profesores-list">
+                        {% for profesor in profesores %}
+                            <li class="profesor-item">
+                                <div class="profesor-details">
+                                    {% if profesor.imagen %}
+                                        <img src="{{ profesor.imagen.url }}" alt="{{ profesor.nombre }}" class="profesor-imagen">
+                                    {% endif %}
+                                    <div class="profesor-info">
+                                        <h4>{{ profesor.nombre }}</h4>
+                                        <p>{{ profesor.materia }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 {% endif %}
-                <div class="profesor-info">
-                    <h4>{{ profesor.nombre }}</h4>
-                    <p>{{ profesor.materia }}</p>
-                </div>
             </div>
-        </li>
-    {% endfor %}
-</ul>
+        </div>
+    </div>
+</section>
