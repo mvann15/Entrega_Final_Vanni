@@ -1,4 +1,8 @@
 <style>
+    body {
+        background-color: #89B5C4;
+
+    }
     .materias-list {
         display: flex;
         flex-direction: column;
@@ -14,12 +18,14 @@
         border: 1px solid #ccc;
         border-radius: 8px;
         overflow: hidden;
+        max-width: 400px;
+        margin: 10px auto;
     }
-
 
     .materia-imagen {
         width: 100%;
         height: auto;
+        max-height: auto;
     }
 
     .materia-info {
@@ -40,8 +46,16 @@
                 {% else %}
                     <ul class="list-group text-center mx-auto">
                         {% for materia in materias %}
-                            <li class="list-group-item">
-                                {{ materia.nombre }} - {{ materia.descripcion }}
+                         <li class="materia-item">
+                                <div class="materia-details">
+                                    {% if materia.imagen %}
+                                        <img src="{{ materia.imagen.url }}" alt="{{ materia.nombre }}" class="materia-imagen">
+                                    {% endif %}
+                                    <div class="materia-info">
+                                        <h4>{{ materia.nombre }}</h4>
+                                        <p>{{ materia.descripcion }}</p>
+                                    </div>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>
