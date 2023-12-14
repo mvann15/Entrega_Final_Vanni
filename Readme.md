@@ -20,7 +20,7 @@ Ya descargada será necesario contar con un ID como Pycharm, ya en el ID selecci
 
 2- Uso
 
-La app es funcional desde el comienzo  y podrás recorrer la página aún sin ser usuario registrado, en ella podrás ver las materias que se dictan en la academia, quienes las dictan y las noticias. (Solo los usuarios registrados pueden comentar las noticias). No imaginé un crud dentro de la app, no existe información sensible y pensé mas en la experiencia del usuario(que usuario edita o borra el precio a un producto en la página de Wallmart?). Yo solo pensé en que pueda servir para promocionar. Todos los botones son funcionales, excepto el que  permite seleccionar la imagen del avatar, para poder modificarla se podrá acceder a través del link https:127.0.0.1:8000/accounts/avatar, sin embargo es necesario ser usuario registrado para poder crearlo.(el motivo del enlace es que no quería ver el botón crear avatar en la página de inicio)
+La app es funcional desde el comienzo  y podrás recorrer la página aún sin ser usuario registrado, en ella podrás ver las materias que se dictan en la academia, quienes las dictan y las noticias. (Solo los usuarios registrados pueden comentar las noticias). No imaginé un crud dentro de la app , no existe información sensible y pensé mas en la experiencia del usuario . Yo solo pensé en que pueda servir para promocionar. Todos los botones son funcionales, excepto el que  permite seleccionar la imagen del avatar, para poder modificarla se podrá acceder a través del link https:127.0.0.1:8000/accounts/avatar, sin embargo es necesario ser usuario registrado para poder crearlo.(el motivo del enlace es que no quería ver el botón crear avatar en la página de inicio)
 
 3-Licencia
 

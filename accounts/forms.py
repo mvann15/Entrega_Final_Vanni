@@ -19,7 +19,6 @@ class UserUpdateForm(UserChangeForm):
         fields = ('email', "last_name")
 
 
-
 class AvatarUpdateForm(forms.ModelForm):
     class Meta:
         model = Avatar

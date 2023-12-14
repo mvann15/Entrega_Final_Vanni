@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
@@ -46,6 +47,7 @@ class NoticiaList(ListView):
         return context
 
 
+@login_required
 def comentario(request):
     noticia = Noticia.objects.get(id=request.POST["noticia"])
     comentario_crear = Comentario(usuario=request.user, noticia=noticia, comentario=request.POST["comentario"])
@@ -61,6 +63,3 @@ def mi_perfil(request):
         'perfil': perfil
     }
     return render(request, 'AppClub/perfil.html', contexto)
-
-
-
